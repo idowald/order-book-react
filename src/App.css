@@ -1,38 +1,62 @@
+body{
+  background : #000000
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: rgb(8 28 44);
   color: white;
+  font-family: monospace;
+}
+th{
+  color :slategray;
+}
+table{
+  table-layout:fixed;
+  border: none;
+}
+td{
+  min-width: 100px;
+  text-align: right;
 }
 
-.App-link {
-  color: #61dafb;
+.order-tables {
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
+  display: flex;
+  flex-wrap: wrap-reverse;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.price-asks{
+  color: red;
 }
+.price-bids{
+  color: green;
+}
+
+
+.myButton {
+  box-shadow:inset 0px 1px 0px 0px #e184f3;
+  background:linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+  background-color:#c123de;
+  border-radius:6px;
+  border:1px solid #a511c0;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #9b14b3;
+}
+.myButton:hover {
+  background:linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+  background-color:#a20dbd;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+
