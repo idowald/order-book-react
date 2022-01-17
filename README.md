@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+# Crypto order-book
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is example of how to run a simple React application, which shows a live crypto order book.
 
-## Available Scripts
+### Main features:
+- High performant UI, supports around 50-60 Fps depends on the device
+- Support switching markets.
+- Support sorting in the order book.
+- Using React hooks only.
 
-In the project directory, you can run:
+### About the state management:
+- A better option would be to pick some state management and to set the updates with batch like redux-batch. But it has some disadvantages:
+    1. You still need a cached version of the order-book before the re-render.
+    2. You have a lot of boilerplating code which can be good for large projects and large teams. but not for a small short project.
+- Using React.Context or useState can make things a bit simplify. The only issue that can happen- it is a bit difficult to control the side effects, while Redux has Sagas for that.
+- Using pure component with React functional components will improve loading time a bit.
 
-### `npm start`
+### Things to improve
+Feel free to contribute:
+- Adding more tests. Especially for components.
+- Improving the Ci/Cd, splitting to Git Actions, adding e2e tests with Cypress.
+- Improving CSS styling: split the App.css to each component and maybe use SCSS/Sass, also some CSS touches can be nice.
+- Converting the useFetch socket to a Context instead if the project becomes more complex.
+- Convert to Next.js to improve performance, support SEO and more security to the API.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### How to run?
+Make sure you have npm installed.
+1. install `npm i`
+2. start `npm start`
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Vercel app
+You can find a live version of the app:
+https://order-book-react.vercel.app
