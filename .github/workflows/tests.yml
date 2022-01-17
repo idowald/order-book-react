@@ -7,13 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/cache@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - name: install dependencies
-        run: npm ci
-      - name: build packages
-        run: npm run lint
-      - name: test packages
-        env:
-          run: npm run test
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test
