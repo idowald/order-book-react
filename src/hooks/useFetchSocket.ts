@@ -9,7 +9,6 @@ import { useRequestAnimationFrame } from './useRequestAnimationFrame';
 // technically useFetchSocket is holding a ReactContext,
 // but for the sake of the assignment we will keep it shorter for now.
 // TODO convert to a React Context
-// TODO the useFetch has a lot of business logic- nice to have to move it to another module
 export const useFetchSocket = (productId: Market) => {
   const newOrdersBuffered = useRef<{bids:number[][], asks:number[][]}>({ bids: [], asks: [] });
   const orderBookCached = useRef(defaultOrderBook);
