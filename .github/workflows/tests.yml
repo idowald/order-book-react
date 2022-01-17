@@ -25,7 +25,7 @@ jobs:
           CI: true
         run: yarn test
   lint:
-    name: Run linters
+    name: Run lint
     runs-on: ubuntu-latest
     steps:
       - name: fetch shallow git history
