@@ -6,35 +6,14 @@ jobs:
     name: Run tests
     runs-on: ubuntu-latest
     steps:
-      - name: fetch shallow git history
-        run: git fetch --no-tags --prune --depth=1 origin +refs/heads/master:refs/remotes/origin/master
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: install dependencies
-        run: yarn install
+        run: npm ci
       - name: build packages
-        run: yarn build
+        run: npm run lint
       - name: test packages
         env:
-          CI: true
-        run: yarn test
-  lint:
-    name: Run lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: fetch shallow git history
-        run: git fetch --no-tags --prune --depth=1 origin +refs/heads/master:refs/remotes/origin/master
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - name: install dependencies
-        run: yarn install
-      - name: build packages
-        run: yarn build
-      - name: test packages
-        env:
-          CI: true
-        run: yarn lint
+          run: npm run test
