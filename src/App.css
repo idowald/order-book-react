@@ -33,8 +33,14 @@ td{
   color: green;
 }
 
-
-.myButton {
+.table-controls{
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  margin: 10px;
+  justify-content: space-around;
+}
+button {
   box-shadow:inset 0px 1px 0px 0px #e184f3;
   background:linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
   background-color:#c123de;
